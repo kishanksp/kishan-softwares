@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Your Business — Professional Services</title>
+  <meta name="description" content="Modern, clean, and responsive business website template." />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Reset & base */
+    :root{
+      --bg:#f7f9fb;
+      --card:#ffffff;
+      --accent:#0066ff;
+      --muted:#6b7280;
+      --glass: rgba(255,255,255,0.65);
+      --radius:14px;
+      --max-width:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{font-family:'Poppins',system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:0;background:linear-gradient(180deg,var(--bg),#eef3fb);color:#0f172a;line-height:1.5;-webkit-font-smoothing:antialiased}
+    a{color:var(--accent);text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{max-width:var(--max-width);margin:0 auto;padding:24px}
+
+    /* Header */
+    header{position:sticky;top:18px;z-index:30}
+    .nav{display:flex;align-items:center;justify-content:space-between;background:transparent;padding:8px 16px;border-radius:12px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:44px;height:44px;background:linear-gradient(135deg,var(--accent),#00a3ff);display:grid;place-items:center;border-radius:10px;box-shadow:0 6px 18px rgba(2,6,23,0.08)}
+    .logo svg{width:22px;height:22px;fill:white}
+    nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
+    .cta-btn{background:var(--accent);color:#fff;padding:10px 14px;border-radius:10px;font-weight:600;box-shadow:0 8px 20px rgba(3,102,255,0.18)}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 460px;gap:34px;align-items:center;padding:48px 0}
+    .hero-card{background:var(--card);padding:34px;border-radius:var(--radius);box-shadow:0 10px 30px rgba(12,16,30,0.06)}
+    .eyebrow{display:inline-block;background:linear-gradient(90deg,#e6f0ff,#f0fbff);padding:6px 10px;border-radius:999px;font-weight:600;color:var(--accent);font-size:13px;margin-bottom:14px}
+    h1{font-size:34px;margin:0 0 10px}
+    p.lead{color:var(--muted);margin:0 0 22px}
+    .hero-cta{display:flex;gap:12px;align-items:center}
+    .secondary{background:transparent;border:1px solid rgba(15,23,42,0.06);padding:10px 14px;border-radius:10px}
+
+    /* Services */
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:20px}
+    .service{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(10,14,30,0.04);display:flex;gap:14px;align-items:flex-start}
+    .service svg{width:40px;height:40px}
+    .service h4{margin:0 0 6px}
+    .muted{color:var(--muted);font-size:14px}
+
+    /* Testimonials */
+    .testimonials{display:grid;grid-template-columns:1fr 340px;gap:24px;align-items:center;margin-top:36px}
+    .testimonial-card{background:linear-gradient(180deg,#ffffff,#fbfdff);padding:22px;border-radius:12px;box-shadow:0 10px 30px rgba(9,14,30,0.05)}
+    .quote{font-size:18px;margin:0 0 12px}
+    .author{display:flex;gap:12px;align-items:center}
+    .avatar{width:44px;height:44px;border-radius:999px;background:#e9eef9;display:grid;place-items:center}
+
+    /* Contact & footer */
+    .contact{display:grid;grid-template-columns:1fr 420px;gap:18px;margin-top:34px}
+    form{background:var(--card);padding:20px;border-radius:12px;box-shadow:0 10px 30px rgba(12,16,30,0.05)}
+    label{display:block;font-weight:600;font-size:14px;margin-bottom:6px}
+    input,textarea{width:100%;padding:10px;border-radius:10px;border:1px solid rgba(15,23,42,0.06);font-size:14px}
+    .btn{display:inline-block;padding:12px 16px;border-radius:10px;background:var(--accent);color:white;font-weight:600;border:none}
+
+    footer{margin-top:40px;padding:20px 0;text-align:center;color:var(--muted)}
+
+    /* Utilities */
+    .shadow-sm{box-shadow:0 6px 14px rgba(8,12,20,0.04)}
+    .center{display:grid;place-items:center}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr;}
+      .hero-card{order:2}
+      .grid{grid-template-columns:repeat(2,1fr)}
+      .testimonials{grid-template-columns:1fr}
+      .contact{grid-template-columns:1fr}
+    }
+    @media (max-width:520px){
+      header{position:static}
+      .nav{padding:8px}
+      h1{font-size:26px}
+      .grid{grid-template-columns:1fr}
+    }
+
+    /* Subtle animations */
+    .fade-in{opacity:0;transform:translateY(10px);animation:fadeIn 700ms forwards}
+    @keyframes fadeIn{to{opacity:1;transform:none}}
+
+    /* Testimonials slider dots */
+    .dots{display:flex;gap:8px;margin-top:10px}
+    .dot{width:10px;height:10px;border-radius:999px;background:#e6eef9}
+    .dot.active{background:var(--accent);transform:scale(1.15)}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="nav">
+        <div class="brand">
+          <div class="logo" aria-hidden>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+              <path d="M4 12a8 8 0 118 8v-6h6A8 8 0 014 12z"></path>
+            </svg>
+          </div>
+          <div>
+            <div style="font-weight:700">Kishan Softwares</div>
+            <div style="font-size:12px;color:var(--muted)">Modern • Professional • Trusted</div>
+          </div>
+        </div>
+        <nav aria-label="Primary">
+          <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a class="cta-btn" href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-card fade-in">
+          <div class="eyebrow">We help businesses grow</div>
+          <h1>Build trust. Convert more customers. Grow revenue.</h1>
+          <p class="lead">We provide tailored solutions for modern businesses — branding, websites, and digital marketing that perform. Fast, secure, and designed to convert.</p>
+          <div class="hero-cta">
+            <a class="btn" href="#contact">Get a Free Quote</a>
+            <a class="secondary" href="#services">Our Services</a>
+          </div>
+
+          <div class="grid" style="margin-top:28px">
+            <div class="service">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 13h8V3H3v10zm10 8h8v-6h-8v6zM3 21h8v-6H3v6zM13 3v6h8V3h-8z" fill="#0b74ff"/>
+              </svg>
+              <div>
+                <h4>Digital Strategy</h4>
+                <div class="muted">Research-driven plans to reach your goals.</div>
+              </div>
+            </div>
+
+            <div class="service">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2l3 6 6 .5-4.5 3.8L18 20l-6-3.8L6 20l1.5-7.7L3 8.5 9 8 12 2z" fill="#00a3ff"/>
+              </svg>
+              <div>
+                <h4>Brand & Design</h4>
+                <div class="muted">Logos, identity and visual systems that stand out.</div>
+              </div>
+            </div>
+
+            <div class="service">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 4h16v2H4zM4 10h16v10H4z" fill="#0066ff"/>
+              </svg>
+              <div>
+                <h4>Web Development</h4>
+                <div class="muted">Fast, responsive sites built with modern standards.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="shadow-sm" style="border-radius:14px;overflow:hidden;align-self:center">
+          <!-- Visual card / can be replaced with an image -->
+          <div style="background:linear-gradient(180deg,#e9f1ff,#ffffff);padding:28px;max-width:420px">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">
+              <div>
+                <div style="font-weight:700">Featured Project</div>
+                <div style="color:var(--muted);font-size:13px">Branding + Website for Acme Co.</div>
+              </div>
+              <div style="width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,#0b74ff,#00a3ff);display:grid;place-items:center;color:white;font-weight:700">A</div>
+            </div>
+            <div style="height:220px;border-radius:10px;background:linear-gradient(180deg,#fff,#f7fbff);display:grid;place-items:center">
+              <!-- simple SVG mockup -->
+              <svg width="240" height="140" viewBox="0 0 240 140" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+                <rect width="240" height="140" rx="10" fill="#ffffff" stroke="#e6f0ff"/>
+                <rect x="16" y="16" width="208" height="28" rx="6" fill="#f3f9ff"/>
+                <rect x="16" y="56" width="208" height="60" rx="6" fill="#eef6ff"/>
+              </svg>
+            </div>
+            <div style="margin-top:14px;color:var(--muted);font-size:14px">A clean, conversion-first site with fast load times and clear CTAs.</div>
+          </div>
+        </aside>
+      </section>
+
+      <section id="about" style="margin-top:26px">
+        <div class="hero-card fade-in">
+          <h2 style="margin-top:0">About Us</h2>
+          <p class="muted">We are a dedicated team of designers, developers, and strategists focused on helping small and medium businesses succeed online. Our approach blends creativity with analytics — we design beautiful experiences that drive measurable results.</p>
+
+          <div style="display:flex;gap:12px;margin-top:18px;flex-wrap:wrap">
+            <div style="padding:12px 14px;background:var(--glass);border-radius:10px">Established 2018</div>
+            <div style="padding:12px 14px;background:var(--glass);border-radius:10px">200+ Projects</div>
+            <div style="padding:12px 14px;background:var(--glass);border-radius:10px">Clients Worldwide</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" style="margin-top:18px">
+        <h3 style="margin-bottom:8px">Our Services</h3>
+        <div class="grid">
+          <div class="service fade-in">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3 6 6 .5-4.5 3.8L18 20l-6-3.8L6 20l1.5-7.7L3 8.5 9 8 12 2z"/></svg>
+            <div>
+              <h4>Brand Strategy</h4>
+              <div class="muted">Position your business for growth with messaging and visual identity.</div>
+            </div>
+          </div>
+
+          <div class="service fade-in">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 13h8V3H3v10zm10 8h8v-6h-8v6zM3 21h8v-6H3v6zM13 3v6h8V3h-8z"/></svg>
+            <div>
+              <h4>Website Design</h4>
+              <div class="muted">Clean UI/UX, responsive templates, and accessible builds.</div>
+            </div>
+          </div>
+
+          <div class="service fade-in">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h16v2H4zM4 10h16v10H4z"/></svg>
+            <div>
+              <h4>Performance & SEO</h4>
+              <div class="muted">Speed optimizations and search strategies that increase visibility.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="testimonials" style="margin-top:28px">
+        <h3>What clients say</h3>
+        <div class="testimonials">
+          <div class="testimonial-card">
+            <p class="quote">“The team redesigned our website and increased conversions by 47% in three months. Professional and easy to work with.”</p>
+            <div class="author">
+              <div class="avatar">J</div>
+              <div>
+                <div style="font-weight:700">Jane Morgan</div>
+                <div class="muted">Founder, BlueLine Co.</div>
+              </div>
+            </div>
+          </div>
+
+          <aside style="align-self:center">
+            <div style="background:var(--card);padding:18px;border-radius:12px;box-shadow:0 10px 30px rgba(12,16,30,0.05)">
+              <div style="font-weight:700">Testimonials</div>
+              <div class="muted" style="font-size:13px;margin-top:8px">Real feedback from our clients — trust, delivery, and results.</div>
+              <div class="dots" id="dots"></div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="contact" style="margin-top:28px">
+        <h3>Contact Us</h3>
+        <div class="contact">
+          <form onsubmit="submitForm(event)">
+            <div style="display:grid;gap:10px">
+              <div>
+                <label for="name">Full name</label>
+                <input id="name" name="name" required placeholder="Your name">
+              </div>
+              <div>
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" required placeholder="you@example.com">
+              </div>
+              <div>
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Tell us about your project"></textarea>
+              </div>
+              <div style="display:flex;gap:10px;align-items:center">
+                <button class="btn" type="submit">Send message</button>
+                <div class="muted" style="font-size:13px">Or email us at <a href="mailto:hello@yourbusiness.com">hello@yourbusiness.com</a></div>
+              </div>
+            </div>
+          </form>
+
+          <div style="border-radius:12px;overflow:hidden">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0860582780164!2d-122.41941508468172!3d37.77492977975995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809c8b8f9b5b%3A0xa1f0a3c5b9a1b0c8!2sSan%20Francisco%20City%20Hall!5e0!3m2!1sen!2sus!4v1600000000000!5m2!1sen!2sus" width="100%" height="360" style="border:0" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div class="muted">© <span id="year"></span> Your Business. All rights reserved.</div>
+    </footer>
+  </div>
+
+  <script>
+    // Set year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Simple form handler (demo)
+    function submitForm(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      if(!name || !email){
+        alert('Please provide name and email.');
+        return;
+      }
+      // For demo: open mailto as fallback
+      const subject = encodeURIComponent('New inquiry from ' + name);
+      const body = encodeURIComponent(message + '\n\n— ' + name + ' (' + email + ')');
+      window.location.href = 'mailto:hello@yourbusiness.com?subject=' + subject + '&body=' + body;
+    }
+
+    // Testimonials slider logic (very small)
+    const testimonials = [
+      {quote:'“The team redesigned our website and increased conversions by 47% in three months. Professional and easy to work with.”',name:'Jane Morgan',title:'Founder, BlueLine Co.'},
+      {quote:'“Fast, communicative, and delivered beyond expectations. Our brand finally feels modern.”',name:'Arjun Patel',title:'CEO, MetroTech'},
+      {quote:'“Clear process, great design, and measurable results. Highly recommended.”',name:'Lina Gomez',title:'CMO, FreshGoods'}
+    ];
+    let idx=0;
+    const dots = document.getElementById('dots');
+    function renderDots(){
+      dots.innerHTML = '';
+      testimonials.forEach((t,i)=>{
+        const d = document.createElement('div');
+        d.className='dot'+(i===idx?' active':'');
+        d.addEventListener('click',()=>{idx=i;updateTestimonial();});
+        dots.appendChild(d);
+      });
+    }
+    function updateTestimonial(){
+      const card = document.querySelector('.quote');
+      const authorName = document.querySelector('.author div div');
+      const authorTitle = document.querySelector('.author div .muted');
+      if(card){
+        card.textContent = testimonials[idx].quote;
+        authorName.textContent = testimonials[idx].name;
+        authorTitle.textContent = testimonials[idx].title;
+      }
+      document.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('active',i===idx));
+    }
+    renderDots();
+    updateTestimonial();
+    setInterval(()=>{idx=(idx+1)%testimonials.length;updateTestimonial()},5000);
+  </script>
+</body>
+</html>
